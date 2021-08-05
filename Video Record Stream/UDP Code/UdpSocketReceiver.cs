@@ -3,29 +3,22 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using Sockets.Plugin.Abstractions;
+using Video_Record_Stream;
 
 using PlatformSocketException = System.Net.Sockets.SocketException;
-using PclSocketException = Sockets.Plugin.Abstractions.SocketException;
+using PclSocketException = Video_Record_Stream.SocketException;
 // ReSharper disable once CheckNamespace
 
-namespace Sockets.Plugin
+namespace Video_Record_Stream
 {
-    /// <summary>
-    ///     Listens on a port for UDP traffic and can send UDP data to arbitrary endpoints.
-    /// </summary>
+   
     public class UdpSocketReceiver : UdpSocketBase, IUdpSocketReceiver
     {
 
         public int Port;
         private CancellationTokenSource _messageCanceller;
 
-        /// <summary>
-        ///     Binds the <code>UdpSocketServer</code> to the specified port on all endpoints and listens for UDP traffic.
-        /// </summary>
-        /// <param name="port">The port to listen on. If '0', selection is delegated to the operating system.</param>        
-        /// <param name="listenOn">The <code>CommsInterface</code> to listen on. If unspecified, all interfaces will be bound.</param>
-        /// <returns></returns>
+  
         public Task StartListeningAsync(int port = 0, ICommsInterface listenOn = null)
         {
             Port = port;
@@ -51,10 +44,7 @@ namespace Sockets.Plugin
                 .WrapNativeSocketExceptions();
         }
 
-        /// <summary>
-        ///     Unbinds a bound <code>UdpSocketServer</code>. Should not be called if the <code>UdpSocketServer</code> has not yet
-        ///     been unbound.
-        /// </summary>
+      
         public Task StopListeningAsync()
         {
             return Task.Run(() =>
@@ -64,34 +54,18 @@ namespace Sockets.Plugin
             });
         }
 
-        /// <summary>
-        ///     Sends the specified data to the endpoint at the specified address/port pair.
-        /// </summary>
-        /// <param name="data">A byte array of data to send.</param>
-        /// <param name="address">The remote address to which the data should be sent.</param>
-        /// <param name="port">The remote port to which the data should be sent.</param>
+      
         public new Task SendToAsync(byte[] data, string address, int port)
         {
             return SendToAsync(data, data.Length, address, port);
         }
 
-        /// <summary>
-        ///     Sends the specified data to the endpoint at the specified address/port pair.
-        /// </summary>
-        /// <param name="data">A byte array of data to send.</param>
-        /// <param name="length">The number of bytes from <c>data</c> to send.</param>
-        /// <param name="address">The remote address to which the data should be sent.</param>
-        /// <param name="port">The remote port to which the data should be sent.</param>
+    
         public new async Task SendToAsync(byte[] data, int length, string address, int port)
         {
             if (_backingUdpClient == null)
             {
-                // haven't bound to a port, so _backingUdpClient has not been created
-                // (must be created with the binding port as a parameter, so is 
-                // instantiated on call to StartListeningAsync(). If we are here, user
-                // is sending before having 'bound' to a port, so just create a temporary
-                // backing client to send this data. 
-
+         
                 try
                 {
                     _backingUdpClient = new UdpClient { EnableBroadcast = true };
@@ -116,9 +90,7 @@ namespace Sockets.Plugin
             }
         }
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
+     
         public override void Dispose()
         {
             if (_messageCanceller != null && !_messageCanceller.IsCancellationRequested)

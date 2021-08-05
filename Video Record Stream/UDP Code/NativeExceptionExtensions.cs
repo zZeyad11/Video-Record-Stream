@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using PclSocketException = Sockets.Plugin.Abstractions.SocketException;
+using PclSocketException = Video_Record_Stream.SocketException;
 using PlatformSocketException = System.Net.Sockets.SocketException;
 
-namespace Sockets.Plugin.Abstractions
+namespace Video_Record_Stream
 {
     public static class NativeExceptionExtensions
     {

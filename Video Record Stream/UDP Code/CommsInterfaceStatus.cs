@@ -1,23 +1,17 @@
-﻿namespace Sockets.Plugin.Abstractions
+﻿namespace Video_Record_Stream
 {
     /// <summary>
     /// The connection state of an interface.
     /// </summary>
     public enum CommsInterfaceStatus
     {
-        /// <summary>
-        /// The state of the interface can not be determined.
-        /// </summary>
+       
         Unknown,
 
-        /// <summary>
-        /// The interface is connected. 
-        /// </summary>
+    
         Connected,
 
-        /// <summary>
-        /// The interface is disconnected.
-        /// </summary>
+       
         Disconnected,
     }
 }

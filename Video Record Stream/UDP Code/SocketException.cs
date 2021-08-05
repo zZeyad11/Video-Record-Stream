@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sockets.Plugin.Abstractions
+namespace Video_Record_Stream
 {
     public sealed class SocketException : Exception
     {

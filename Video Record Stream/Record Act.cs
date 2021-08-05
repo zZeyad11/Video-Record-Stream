@@ -2,23 +2,15 @@
 using System.Collections.Generic;
 
 using System.Linq;
-using System.Text;
-using Sockets.Plugin;
-using Sockets.Plugin.Abstractions;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
-using Android.Hardware;
-using Android.Media;
 using Android.OS;
-using Android.Provider;
 using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using static Android.Hardware.Camera;
 using Android.Support.Design.Widget;
 using System.IO;
-using Java.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using Camera = Android.Hardware.Camera;

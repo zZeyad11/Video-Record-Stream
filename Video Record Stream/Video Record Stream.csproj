@@ -91,13 +91,10 @@
     <Compile Include="UDP Code\NativeExceptionExtensions.cs" />
     <Compile Include="UDP Code\ICommsInterface.cs" />
     <Compile Include="UDP Code\IUdpSocketClient.cs" />
-    <Compile Include="UDP Code\IUdpSocketMulticastClient.cs" />
     <Compile Include="UDP Code\IUdpSocketReceiver.cs" />
     <Compile Include="UDP Code\NetworkExtensions.cs" />
-    <Compile Include="UDP Code\ServiceNames.cs" />
     <Compile Include="UDP Code\UdpSocketBase.cs" />
     <Compile Include="UDP Code\UdpSocketClient.cs" />
-    <Compile Include="UDP Code\UdpSocketMulticastClient.cs" />
     <Compile Include="UDP Code\UdpSocketReceiver.cs" />
     <Compile Include="Whole\VideoReciver - SendWholeVideo.cs" />
     <Compile Include="VideoReciver.cs" />

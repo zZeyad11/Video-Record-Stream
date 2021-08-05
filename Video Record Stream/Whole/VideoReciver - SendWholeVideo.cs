@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Sockets.Plugin;
-using Sockets.Plugin.Abstractions;
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using System.Net;
 using System.Net.Sockets;
@@ -16,7 +10,6 @@ using System.IO;
 using System.Threading.Tasks;
 using Environment = Android.OS.Environment;
 using Java.IO;
-using Android.Support.V4.Content;
 using Android.Util;
 using Google.Android.Material.Slider;
 
